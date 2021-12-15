@@ -1,0 +1,41 @@
+<odoo>
+
+    <record model="ir.actions.act_window" id="persona_action">
+        <field name="name">Persona</field>
+        <field name="res_model">rubrica.persona</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="estudiante_action">
+        <field name="name">Estudiantes</field>
+        <field name="res_model">rubrica.estudiante</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Rubrica" id="rubrica_menu_root"/>
+
+    <menuitem name="Persona" id="rubrica_menu_persona" parent="rubrica_menu_root" action ="persona_action"/>
+    <menuitem name="Estudiante" id="rubrica_menu_estudiante" parent="rubrica_menu_root" action ="estudiante_action"/>
+
+        <record model="ir.ui.view" id="persona_form_view">
+        <field name="name">persona.form</field>
+        <field name="model">rubrica.persona</field>
+        <field name="arch" type="xml">
+            <form string="formulario de personas">
+                <sheet>
+                    <group>
+                        <field name="dni"/>
+                        <field name="name"/>
+                        <field name="apellidos"/>
+                        <field name="direccion"/>
+                        <field name="telefono"/>
+                        <field name="peso"/>
+                        <field name="altura"/>
+                        <field name="imc"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
