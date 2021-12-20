@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_1.xsd"
+    version="3.1">
+	<display-name>Archetype Created Web Application</display-name>
+	
+	<servlet>
+		<servlet-name>InsertPersona</servlet-name>
+		<servlet-class>servlet.InsertPersona</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>InsertPersona</servlet-name>
+		<url-pattern>/InsertPersona</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DeletePersona</servlet-name>
+		<servlet-class>servlet.DeletePersona</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DeletePersona</servlet-name>
+		<url-pattern>/DeletePersona</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+</web-app>
