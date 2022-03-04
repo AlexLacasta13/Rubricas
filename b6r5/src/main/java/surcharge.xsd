@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.javacodegeeks.org/webservices/soap/surcharge/generated"
+	xmlns:tns="http://www.javacodegeeks.org/webservices/soap/surcharge/generated"
+	elementFormDefault="qualified">
+
+	<xs:element name="SurchargeRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="order">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="id" type="xs:string"></xs:element>
+							<xs:element name="value" type="xs:int"></xs:element>
+							<xs:element name="payment_method" type="xs:string"></xs:element>
+							<xs:element name="customer">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element maxOccurs="2" name="name">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="part" type="xs:string" />
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="address">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element maxOccurs="2" name="street">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:string">
+																	<xs:attribute name="line" type="xs:string" />
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="city" type="xs:string"></xs:element>
+													<xs:element name="postalcode" type="xs:int"></xs:element>
+													<xs:element name="country" type="xs:string"></xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="SurchargeResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="surcharge" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
